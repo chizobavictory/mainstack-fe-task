@@ -20,6 +20,7 @@ const Transactions = () => {
           </button>
         </div>
       </div>
+      <div className="w-full border-t mt-4 border-gray-300" />
       <TransactionsList/>
     </div>
   );
