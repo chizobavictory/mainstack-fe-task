@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Chart from "../components/Chart";
 import Balance from "../components/Balance";
 import Transactions from "../components/Transactions";
+import Sidebar from "../components/Sidebar";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         </div>
         <Transactions />
       </div>
+        <Sidebar />
     </div>
   );
 };

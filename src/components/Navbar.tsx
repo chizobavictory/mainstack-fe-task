@@ -13,7 +13,7 @@ import avi from "../assets/avi.svg";
 const Navbar = () => {
   return (
     <div className="px-4 pt-4">
-      <div className="flex justify-between shadow border-2 border-white rounded-full p-2 h-16 items-center">
+      <div className="flex justify-between shadow border-2 border-white rounded-full p-2 h-16 items-center sticky top-0">
         <div className="p-4">
           <img src={logo} alt="Mainstack Logo" />
         </div>

@@ -1,5 +1,6 @@
 import expand from "../assets/expand_more.svg";
 import download from "../assets/download.svg";
+import TransactionsList from "./TransactionsList";
 const Transactions = () => {
   return (
     <div className="flex flex-col pt-20">
@@ -19,6 +20,7 @@ const Transactions = () => {
           </button>
         </div>
       </div>
+      <TransactionsList/>
     </div>
   );
 };
