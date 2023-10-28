@@ -4,7 +4,7 @@ import home from "../assets/home.svg";
 import chart from "../assets/insert_chart.svg";
 import payments from "../assets/payments.svg";
 import crm from "../assets/group.svg";
-import group from "../assets/group.svg";
+// import group from "../assets/group.svg";
 import notifications from "../assets/notifications.svg";
 import chat from "../assets/chat.svg";
 import menu from "../assets/menu.svg";

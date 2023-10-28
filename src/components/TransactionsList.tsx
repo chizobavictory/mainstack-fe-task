@@ -1,5 +1,5 @@
 import call_received from "../assets/call_received.svg";
-import call_made from "../assets/call_made.svg";
+// import call_made from "../assets/call_made.svg";
 const TransactionsList = () => {
   return (
     <div className="flex flex-col gap-4 pt-6">
