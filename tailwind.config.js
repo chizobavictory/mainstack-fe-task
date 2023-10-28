@@ -4,7 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Degular: ["Degular", "sans-serif"],
+        degularregular: ["degularregular", "sans-serif"],
+        degularbold: ["degularbold", "sans-serif"],
+        degularmedium: ["degularmedium", "sans-serif"],
+        degularlight: ["degularlight", "sans-serif"],
+        degularsemibold: ["degularsemibold", "sans-serif"],
+        degularthin: ["degularthin", "sans-serif"],
+        
       },
     },
   },
