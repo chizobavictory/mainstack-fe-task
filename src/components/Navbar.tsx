@@ -11,16 +11,22 @@ import menu from "../assets/menu.svg";
 import avi from "../assets/avi.svg";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
+import UserDropdown from "./UserDropdown";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [appsButtonClicked, setAppsButtonClicked] = useState(false);
+
+  const [userDropdownVisible, setUserDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
     setAppsButtonClicked(!appsButtonClicked);
   };
 
+  const toggleUserDropdown = () => {
+    setUserDropdownVisible(!userDropdownVisible);
+  };
 
   return (
     <div className="sticky top-0 bg-white">
@@ -52,7 +58,7 @@ const Navbar = () => {
                 className={`flex items-center p-2 gap-1 rounded-full cursor-pointer ${appsButtonClicked ? "bg-neutral-900" : "hover:bg-gray-200"}`}
                 onClick={toggleDropdown}
               >
-                <img src={widgets} alt="apps"  className="text-white"/>
+                <img src={widgets} alt="apps" className="text-white" />
                 <p className={`font-[degularsemibold] text-base ${appsButtonClicked ? "text-white" : "text-gray-600"}`}>
                   Apps{appsButtonClicked ? " | Link in Bio" : ""}
                 </p>
@@ -66,15 +72,19 @@ const Navbar = () => {
               <div className="p-2">
                 <img src={chat} alt="chat" />
               </div>
-              <div className="p-2 pr-3 flex gap-2 bg-gray-100 rounded-full">
+              <div
+                className={`flex items-center p-2 gap-1 rounded-full cursor-pointer ${userDropdownVisible ? "bg-neutral-900" : "hover:bg-gray-200"}`}
+                onClick={toggleUserDropdown}
+              >
                 <img src={avi} alt="avatar" className="rounded-full" />
-                <img src={menu} alt="chat" />
+                <img src={menu} alt="menu" />
               </div>
             </div>
           </div>
         </div>
       </div>
       {showDropdown && <Dropdown />}
+      {userDropdownVisible && <UserDropdown />}
     </div>
   );
 };
