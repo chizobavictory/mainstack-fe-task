@@ -1,3 +1,5 @@
+// TransactionsList.tsx
+
 import React from 'react';
 import call_received from '../assets/call_received.svg';
 import useTransactionData from '../hooks/transactions';
@@ -32,10 +34,10 @@ const TransactionsList = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <p className="text-neutral-900 text-base font-[degularmedium]">
-                  {transaction.metadata?.name }
+                  {transaction.metadata?.name || 'N/A'}
                 </p>
                 <p className="text-gray-600 text-sm font-[degularmedium]">
-                  {transaction.metadata?.email}
+                  {transaction.metadata?.email || 'N/A'}
                 </p>
               </div>
             </div>

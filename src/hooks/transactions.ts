@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 interface TransactionData {
   amount: number;
   metadata: {
-    name: string;
+    name?: string;
     type: string;
-    email: string;
+    email?: string;
     quantity?: number;
     country: string;
     product_name?: string;
