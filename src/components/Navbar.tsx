@@ -63,7 +63,7 @@ const Navbar = () => {
                 <p className={`font-[degularsemibold] text-base ${appsButtonClicked ? "text-white" : "text-gray-600"}`}>
                   Apps{appsButtonClicked ? " | Link in Bio" : ""}
                 </p>
-                {appsButtonClicked && <img src={expand} alt="expand" className="bg-white"/>}
+                {appsButtonClicked && <img src={expand} alt="expand" />}
               </div>
             </div>
 
