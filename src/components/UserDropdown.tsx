@@ -18,49 +18,49 @@ const UserDropdown = () => {
             </div>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
           <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Settings
           </p>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
         <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Purchase History
           </p>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
         <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Refer and Earn
           </p>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
         <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Integrations
           </p>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
         <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Report Bug
           </p>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
         <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Switch Account
           </p>
           </div>
         </li>
-        <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">
+        <li className="px-4 py-2 hover:shadow rounded-md cursor-pointer">
         <div>
           <p className="text-neutral-900 text-base font-[degularmedium]">
             Sign Out

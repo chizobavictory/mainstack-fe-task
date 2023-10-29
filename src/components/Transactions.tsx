@@ -1,7 +1,20 @@
+import React, { useState } from "react";
 import expand from "../assets/expand_more.svg";
 import download from "../assets/download.svg";
 import TransactionsList from "./TransactionsList";
+import FilterModal from "./Modal";
+
 const Transactions = () => {
+  const [isFilterModalOpen, setFilterModalOpen] = useState(false);
+
+  const openFilterModal = () => {
+    setFilterModalOpen(true);
+  };
+
+  const closeFilterModal = () => {
+    setFilterModalOpen(false);
+  };
+
   return (
     <div className="flex flex-col pt-20">
       <div className="flex justify-between">
@@ -10,7 +23,10 @@ const Transactions = () => {
           <p className="font-[degularmedium] text-gray-600">Your transactions for the last 7 days</p>
         </div>
         <div className="flex gap-2">
-          <button className="bg-gray-100 text-neutral-900 p-4 items-center flex gap-2 rounded-full font-[degularsemibold] h-12">
+          <button
+            className="bg-gray-100 text-neutral-900 p-4 items-center flex gap-2 rounded-full font-[degularsemibold] h-12"
+            onClick={openFilterModal}
+          >
             Filter
             <img src={expand} alt="expand" />
           </button>
@@ -21,7 +37,8 @@ const Transactions = () => {
         </div>
       </div>
       <div className="w-full border-t mt-4 border-gray-300" />
-      <TransactionsList/>
+      <TransactionsList />
+      <FilterModal isOpen={isFilterModalOpen} onClose={closeFilterModal} />
     </div>
   );
 };
