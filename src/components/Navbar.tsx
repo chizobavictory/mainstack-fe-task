@@ -12,7 +12,7 @@ import avi from "../assets/avi.svg";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import UserDropdown from "./UserDropdown";
-import expand from "../assets/expand_more.svg";
+import expand from "../assets/expandwhite.svg";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
