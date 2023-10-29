@@ -12,6 +12,7 @@ import avi from "../assets/avi.svg";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import UserDropdown from "./UserDropdown";
+import expand from "../assets/expand_more.svg";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -62,6 +63,7 @@ const Navbar = () => {
                 <p className={`font-[degularsemibold] text-base ${appsButtonClicked ? "text-white" : "text-gray-600"}`}>
                   Apps{appsButtonClicked ? " | Link in Bio" : ""}
                 </p>
+                {appsButtonClicked && <img src={expand} alt="expand" className="bg-white"/>}
               </div>
             </div>
 
