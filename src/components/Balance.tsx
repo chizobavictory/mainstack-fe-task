@@ -27,11 +27,11 @@ const Balance = () => {
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <p className="text-gray-600 text-sm font-[degularmedium]">Ledger Balance</p>
+          <p className="text-gray-600 text-sm font-[degularmedium]">Pending Payout</p>
           <img src={info} alt="info" />
         </div>
         <p className="text-neutral-900 text-[28px] font-[degularbold]">
-          {walletData ? `USD ${walletData.ledger_balance.toFixed(2)}` : "Loading..."}
+          {walletData ? `USD ${walletData.pending_payout.toFixed(2)}` : "Loading..."}
         </p>
       </div>
     </div>
