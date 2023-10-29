@@ -13,7 +13,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose }) => {
 
       {/* Filter modal with custom animation */}
       <div
-        className={`fixed top-2 right-0 w-[420px] h-[670px] rounded-md bg-white border border-gray-200 shadow-2xl transform z-20 animate-slide-in-slow ${
+        className={`fixed top-2 right-2 w-[420px] h-[670px] rounded-[20px] bg-white border border-gray-200 shadow-2xl transform z-20 animate-slide-in-slow ${
           isOpen ? "" : "translate-x-full"
         }`}
       >
