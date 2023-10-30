@@ -1,33 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 
-const FilterDropdown = () => {
-  const [items, setItems] = useState([
-    { id: 1, text: "Item 1", checked: false },
-    { id: 2, text: "Item 2", checked: false },
-    { id: 3, text: "Item 3", checked: false },
-  ]);
+interface FilterDropdownProps {
+  items: { id: number; text: string; checked: boolean }[];
+  onItemCheck: (id: number) => void;
+  selectedItems: { id: number; text: string; checked: boolean }[];
+  onToggleDropdown: () => void;
+  dropdownVisible: boolean;
+  buttonText: string;
+}
 
-  const handleItemClick = (id: number) => {
-    const updatedItems = items.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
-    setItems(updatedItems);
-  };
-
-  const [dropdownVisible, setDropdownVisible] = useState(false);
-
+const FilterDropdown: React.FC<FilterDropdownProps> = ({
+  items,
+  onItemCheck,
+  selectedItems,
+  onToggleDropdown,
+  dropdownVisible,
+  buttonText,
+}) => {
   return (
-    <div className="relative w-full inline-block text-left">
+    <div className="relative inline-block text-left z-3">
       <button
-        onClick={() => setDropdownVisible(!dropdownVisible)}
-        className="h-12 bg-white rounded-md px-4 py-2 text-sm border-neutral-900 border-2 font-[degularsemibold] w-full"
+        onClick={onToggleDropdown}
+        className="h-12 bg-white rounded-md px-4 py-2 text-sm border-neutral-900 border-2 font-[degularsemibold] justify-center text-center w-full"
       >
-        Start Date
+        {selectedItems.length === 0 ? buttonText : selectedItems.map((item) => item.text).join(", ")}
       </button>
       {dropdownVisible && (
-        <div className="absolute left-0  w-full bg-white border border-gray-200 rounded-md shadow-lg">
+        <div className="absolute left-0 w-full bg-white border border-gray-200 rounded-md shadow-lg">
           <ul className="py-2">
             {items.map((item) => (
-              <li key={item.id} className="flex items-center px-4 py-2 cursor-pointer">
-                <input type="checkbox" className="mr-2" checked={item.checked} onChange={() => handleItemClick(item.id)} />
+              <li
+                key={item.id}
+                className="flex items-center px-4 py-2 cursor-pointer text-base font-[degularsemibold]"
+              >
+                <input
+                  type="checkbox"
+                  className="mr-2 h-4 w-4 text-neutral-900 "
+                  checked={item.checked}
+                  onChange={() => onItemCheck(item.id)}
+                />
                 <span>{item.text}</span>
               </li>
             ))}
