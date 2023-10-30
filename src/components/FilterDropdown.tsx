@@ -18,7 +18,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   buttonText,
 }) => {
   return (
-    <div className="relative inline-block text-left z-3">
+    <div className="relative inline-block text-left">
       <button
         onClick={onToggleDropdown}
         className="h-12 bg-white rounded-md px-4 py-2 text-sm border-neutral-900 border-2 font-[degularsemibold] justify-center text-center w-full"
@@ -26,7 +26,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
         {selectedItems.length === 0 ? buttonText : selectedItems.map((item) => item.text).join(", ")}
       </button>
       {dropdownVisible && (
-        <div className="absolute left-0 w-full bg-white border border-gray-200 rounded-md shadow-lg">
+        <div className="absolute left-0 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10">
           <ul className="py-2">
             {items.map((item) => (
               <li
