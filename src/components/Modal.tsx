@@ -54,13 +54,16 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose }) => {
               <img src={close} alt="close" />
             </button>
           </div>
-          <div className="flex h-10 gap-2 overflow-x-auto">
+          <div className="flex h-9 gap-3 overflow-x-auto">
             {buttonLabels.map((label, index) => (
               <button key={index} className="px-5 py-2.5 bg-white rounded-full border border-gray-100 flex items-center gap-1">
-                <p className="text-neutral-900 text-sm font-[degularsemibold]">{label}</p>
+                <p className="text-neutral-900 text-sm font-[degularsemibold] w-full" style={{ flexDirection: "row" }}>
+                  {label}
+                </p>
               </button>
             ))}
           </div>
+
           <div className="flex flex-col gap-3">
             <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Date Range</p>
             <div className="flex justify-between gap-2 ">
@@ -81,9 +84,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose }) => {
             <FilterDropdown
               items={transactionTypes}
               onItemCheck={(id) => {
-                const updatedItems = transactionTypes.map((item) =>
-                  item.id === id ? { ...item, checked: !item.checked } : item
-                );
+                const updatedItems = transactionTypes.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
                 setTransactionTypes(updatedItems);
               }}
               selectedItems={transactionTypes.filter((item) => item.checked)}
@@ -97,9 +98,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose }) => {
             <FilterDropdown
               items={transactionStatuses}
               onItemCheck={(id) => {
-                const updatedItems = transactionStatuses.map((item) =>
-                  item.id === id ? { ...item, checked: !item.checked } : item
-                );
+                const updatedItems = transactionStatuses.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
                 setTransactionStatuses(updatedItems);
               }}
               selectedItems={transactionStatuses.filter((item) => item.checked)}
@@ -109,12 +108,8 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose }) => {
             />
           </div>
           <div className="flex justify-between gap-3 mt-20 ">
-            <button className="h-12 px-6 py-3 bg-white rounded-[100px] border border-gray-100 justify-center items-center w-full">
-              Clear
-            </button>
-            <button className="h-12 px-6 py-3 bg-neutral-900 rounded-[100px] justify-center items-center gap-2 text-white w-full">
-              Apply
-            </button>
+            <button className="h-12 px-6 py-3 bg-white rounded-[100px] border border-gray-100 justify-center items-center w-full">Clear</button>
+            <button className="h-12 px-6 py-3 bg-neutral-900 rounded-[100px] justify-center items-center gap-2 text-white w-full">Apply</button>
           </div>
         </div>
       </div>
