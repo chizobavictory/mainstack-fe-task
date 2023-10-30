@@ -47,67 +47,67 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose }) => {
           isOpen ? "" : "translate-x-full"
         }`}
       >
-        <div className="p-4 flex flex-col gap-6">
-          <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-[degularsemibold] text-neutral-900">Filter</h2>
-            <button onClick={onClose} className="hover:bg-gray-200 rounded-full">
-              <img src={close} alt="close" />
-            </button>
-          </div>
-          <div className="flex h-9 gap-3 overflow-x-auto">
-            {buttonLabels.map((label, index) => (
-              <button key={index} className="px-5 py-2.5 bg-white rounded-full border border-gray-100 flex items-center gap-1">
-                <p className="text-neutral-900 text-sm font-[degularsemibold] w-full" style={{ flexDirection: "row" }}>
-                  {label}
-                </p>
+        <div className="flex flex-col justify-between p-4 h-full">
+          <div className="flex flex-col gap-6">
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-[degularsemibold] text-neutral-900">Filter</h2>
+              <button onClick={onClose} className="hover:bg-gray-200 rounded-full">
+                <img src={close} alt="close" />
               </button>
-            ))}
-          </div>
+            </div>
+            <div className="flex h-9 gap-3 overflow-x-auto w-full">
+              {buttonLabels.map((label, index) => (
+                <button key={index} className="p-4  bg-white rounded-full border border-gray-100 flex items-center gap-1">
+                  <p className="text-neutral-900 text-sm inline-block w-full font-[degularsemibold]">{label}</p>
+                </button>
+              ))}
+            </div>
 
-          <div className="flex flex-col gap-3">
-            <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Date Range</p>
-            <div className="flex justify-between gap-2 ">
-              <input
-                type="text"
-                placeholder="Start Date"
-                className="w-[200px] h-12  bg-gray-100 rounded-md px-4 py-2 text-sm text-neutral-900 font-[degularsemibold]"
+            <div className="flex flex-col gap-3">
+              <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Date Range</p>
+              <div className="flex justify-between gap-2 ">
+                <input
+                  type="text"
+                  placeholder="Start Date"
+                  className="w-[200px] h-12  bg-gray-100 rounded-md px-4 py-2 text-sm text-neutral-900 font-[degularsemibold]"
+                />
+                <input
+                  type="text"
+                  placeholder="End Date"
+                  className="w-[200px] h-12  bg-gray-100 rounded-md px-4 py-2 text-sm text-neutral-900 font-[degularsemibold]"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Transaction Type</p>
+              <FilterDropdown
+                items={transactionTypes}
+                onItemCheck={(id) => {
+                  const updatedItems = transactionTypes.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
+                  setTransactionTypes(updatedItems);
+                }}
+                selectedItems={transactionTypes.filter((item) => item.checked)}
+                onToggleDropdown={toggleTransactionTypesDropdown}
+                dropdownVisible={transactionTypesDropdownVisible}
+                buttonText="Select Transaction Type"
               />
-              <input
-                type="text"
-                placeholder="End Date"
-                className="w-[200px] h-12  bg-gray-100 rounded-md px-4 py-2 text-sm text-neutral-900 font-[degularsemibold]"
+            </div>
+            <div className="flex flex-col gap-3">
+              <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Transaction Status</p>
+              <FilterDropdown
+                items={transactionStatuses}
+                onItemCheck={(id) => {
+                  const updatedItems = transactionStatuses.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
+                  setTransactionStatuses(updatedItems);
+                }}
+                selectedItems={transactionStatuses.filter((item) => item.checked)}
+                onToggleDropdown={toggleTransactionStatusesDropdown}
+                dropdownVisible={transactionStatusesDropdownVisible}
+                buttonText="Select Transaction Status"
               />
             </div>
           </div>
-          <div className="flex flex-col gap-3">
-            <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Transaction Type</p>
-            <FilterDropdown
-              items={transactionTypes}
-              onItemCheck={(id) => {
-                const updatedItems = transactionTypes.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
-                setTransactionTypes(updatedItems);
-              }}
-              selectedItems={transactionTypes.filter((item) => item.checked)}
-              onToggleDropdown={toggleTransactionTypesDropdown}
-              dropdownVisible={transactionTypesDropdownVisible}
-              buttonText="Select Transaction Type"
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <p className="h-4 text-neutral-900 text-base font-[degularsemibold]  leading-normal">Transaction Status</p>
-            <FilterDropdown
-              items={transactionStatuses}
-              onItemCheck={(id) => {
-                const updatedItems = transactionStatuses.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item));
-                setTransactionStatuses(updatedItems);
-              }}
-              selectedItems={transactionStatuses.filter((item) => item.checked)}
-              onToggleDropdown={toggleTransactionStatusesDropdown}
-              dropdownVisible={transactionStatusesDropdownVisible}
-              buttonText="Select Transaction Status"
-            />
-          </div>
-          <div className="flex justify-between gap-3 mt-20 ">
+          <div className="flex justify-between gap-3 ">
             <button className="h-12 px-6 py-3 bg-white rounded-[100px] border border-gray-100 justify-center items-center w-full">Clear</button>
             <button className="h-12 px-6 py-3 bg-neutral-900 rounded-[100px] justify-center items-center gap-2 text-white w-full">Apply</button>
           </div>
